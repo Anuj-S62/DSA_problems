@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 typedef struct node
@@ -55,24 +55,29 @@ void is_empty(struct node *top)
     }
 }
 
-void peek(node *top, int i){
+void peek(node *top, int i)
+{
 
     int a = 0;
     node *q = top;
-        struct node *ptr = top;
-    while (q != NULL){
-    // cout<<a<<endl;
+    struct node *ptr = top;
+    while (q != NULL)
+    {
         a++;
-        q=q->next;
+        q = q->next;
     }
-    if (i > a + 2){
+    if (i > a + 2)
+    {
         printf("Enter a valid position\n");
     }
-    else if(ptr==NULL){
+    else if (ptr == NULL)
+    {
         printf("stack is empty\n");
     }
-    else{
-        for (int j = 0; j < i - 1; j++){
+    else
+    {
+        for (int j = 0; j < i - 1; j++)
+        {
             ptr = ptr->next;
         }
         printf("element at %d place is: %d\n", i, ptr->data);
@@ -89,22 +94,37 @@ node *show(struct node *top)
     else
     {
         node *ptr = top;
+        cout << "Your stack is: " << endl;
+        cout << endl;
+        int i = 1;
         while (ptr != NULL)
         {
-            printf("Element is: %d\n", ptr->data);
+            if (ptr->data < 10)
+            {
+                cout << "| " << ptr->data << "  | <-" << i << endl;
+                ptr = ptr->next;
+                i++;
+                continue;
+            }
+            cout << "| " << ptr->data << " | <-" << i << endl;
             ptr = ptr->next;
+            i++;
         }
     }
+    cout << "|____|";
     printf("\n");
     return top;
 }
 
-void stacktop(node* top){
-    if(top==NULL){
-        cout<<"stack is empty"<<endl;
+void stacktop(node *top)
+{
+    if (top == NULL)
+    {
+        cout << "stack is empty" << endl;
     }
-    else{
-        cout<<top->data<<endl;
+    else
+    {
+        cout << top->data << endl;
     }
 }
 
@@ -114,13 +134,13 @@ int main()
     //    top=(node* )malloc(sizeof(struct node));
     //    top->data=56;
     //    top->next=NULL;
-    // top = push(top, 88);
-    // top = push(top, 45);
-    // top = push(top, 6);
-    // top = push(top, 89);
-    // top = push(top, 12);
-    // top = push(top, 34);
-    //    top=pop(top);
+    top = push(top, 88);
+    top = push(top, 45);
+    top = push(top, 6);
+    top = push(top, 89);
+    top = push(top, 12);
+    top = push(top, 34);
+    top = pop(top);
     //    top=pop(top);
     //    top=pop(top);
     //    top=pop(top);
@@ -129,7 +149,8 @@ int main()
     //    top=pop(top);
     // is_empty(top);
     //  top=show(top);
-    peek(top, 1);
-    stacktop(top);
+    top = show(top);
+    // peek(top, 5);
+    // stacktop(top);
     return 0;
 }
