@@ -11,20 +11,13 @@ int main() {
      */
      int a,b;
      cin>>a>>b;
-     int i=b+1;
-     int sum=0;
-     while(i!=a){
-         if(i%2==1 || i%2==-1){
-             sum=sum+i;
-         }
-         cout<<sum<<endl;
-         i++;
+     int q=a/b;
+     int r=a%b;
+     if(r<0){
+         r=r*-1;
      }
-     cout<<sum<<endl;
+     cout<<q<<" "<<r<<endl;
+     
  
     return 0;
 }
-
-
-
-
