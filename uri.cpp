@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
  
 using namespace std;
  
@@ -9,15 +9,16 @@ int main() {
      * Code your solution here
      * Escriba su solución aquí
      */
-     int a,b;
-     cin>>a>>b;
-     int q=a/b;
-     int r=a%b;
-     if(r<0){
-         r=r*-1;
+     int n;
+     cin>>n;
+     int x;
+     float a;
+     for(int i=0;i<n;i++){
+         cin>>x;
+         a=2.5*x*x*tan(0.942477795);
+         cout<<fixed;
+         cout<<setprecision(3)<<a<<endl;
      }
-     cout<<q<<" "<<r<<endl;
-     
  
     return 0;
 }
