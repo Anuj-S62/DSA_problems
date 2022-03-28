@@ -32,7 +32,7 @@ void fib(int a){
 }
  
 int main(){
-    fib(7);
+    fib(1000000000);
     return 0;
 }
 
