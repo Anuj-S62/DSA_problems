@@ -35,8 +35,8 @@ void inorder(node* root){
 node* create(int val){
    node * root = new node;
    root->val = val;
-   root->left = nullptr;
-   root->right = nullptr;
+   root->left = NULL;
+   root->right = NULL;
    return  root;
 }
 
@@ -53,11 +53,16 @@ int main(){
     node* r2 = create(78);
     l1->left = l2;
     l1->right = r2;
-    preorder(root);
-    cout<<endl;
-    postorder(root);
-    cout<<endl;
-    inorder(root);
+    // preorder(root);
+    // cout<<endl;
+    // postorder(root);
+    // cout<<endl;
+    // inorder(root);
+
+    node* ptr = root;
+    ptr = ptr->right->left;
+    if(!ptr) cout<<"helo"<<endl;
+    // cout<<ptr->val<<endl;
 
 
 
